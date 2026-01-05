@@ -91,6 +91,7 @@ gcloud run deploy "$SERVICE_NAME" \
   --execution-environment gen2 \
   --add-volume=name=gcs-data,type=cloud-storage,bucket="$BUCKET_NAME" \
   --add-volume-mount=volume=gcs-data,mount-path=/mnt/gcs \
+  --timeout 300 \
   --memory 2Gi \
   --cpu 1
 

@@ -5,6 +5,7 @@ import time
 import random
 import string
 import re
+import json
 from typing import Optional, Dict, Any, Tuple
 from curl_cffi.requests import AsyncSession
 from curl_cffi import CurlMime
@@ -192,7 +193,7 @@ class SoraClient:
                     error_info = error_data.get("error", {})
                     if error_info.get("code") == "unsupported_country_code":
                         # Create structured error with full error data
-                        import json
+
                         error_msg = json.dumps(error_data)
                         debug_logger.log_error(
                             error_message=f"Unsupported country: {error_msg}",

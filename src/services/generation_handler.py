@@ -600,7 +600,7 @@ class GenerationHandler:
             # Parse error message to check if it's a structured error (JSON)
             error_response = None
             try:
-                import json
+
                 error_response = json.loads(str(e))
             except:
                 pass
